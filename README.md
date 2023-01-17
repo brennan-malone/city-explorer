@@ -1,7 +1,7 @@
 # Project Name
 
 **Author**: Brennan Malone
-**Version**: 1.0.0
+**Version**: 1.0.1
 
 ## Overview
 
@@ -9,11 +9,11 @@ Application is design to reach out to a location API and provide a map interface
 
 ## Getting Started
 
-Use React to create the app and copy the code over. The API key will need to be changed.
+Use React, Axios, and Bootstrap packages. The LocationIQ API key will need to be changed.
 
 ## Architecture
 
-LocationIQ, React, HTML, CSS, JavaScript.
+LocationIQ, React, HTML, CSS, JavaScript
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
