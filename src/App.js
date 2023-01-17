@@ -1,6 +1,12 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import ListGroup from 'react-bootstrap/ListGroup';
+import Image from 'react-bootstrap/Image';
+import Alert from 'react-bootstrap/Alert';
+import Container from 'react-bootstrap/Container';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,6 +16,7 @@ class App extends React.Component {
       cityData: [],
       error: false,
       errorMessage: '',
+      cityMap: '',
     }
   }
   handleInput = (e) => {
@@ -25,15 +32,18 @@ class App extends React.Component {
 
       let cityDataFromAxios = await axios.get(url)
 
+      let cityMap = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${cityDataFromAxios.data[0].lat},${cityDataFromAxios.data[0].lon}&zoom=10`;
+
       this.setState({
         cityData: cityDataFromAxios.data[0],
+        cityMap: cityMap,
         error: false
       })
 
     } catch (error) {
       this.setState({
         error: true,
-        errorMessage: error.message
+        errorMessage: `${error.message}`
       })
     }
   }
@@ -42,16 +52,26 @@ class App extends React.Component {
       <>
         <h1>API Calls</h1>
 
-        <form onSubmit={this.getCityData}>
+        <Form onSubmit={this.getCityData}>
+          <Form.Group>
           <label htmlFor="">Pick a City!
-            <input type="text" /></label>
-          <button type="submit">Explore!</button>
-        </form>
+            <input type="text" onInput={this.handleInput} />
+            <Button type="submit">Explore!</Button>
+          </label>
+          </Form.Group>
+        </Form>
 
         {
           this.state.error
-          ? <p>{this.state.errorMessage}</p>
-          : <p>{this.state.cityData.display_name}</p>
+            ? <Alert variant="warning">{this.state.errorMessage}</Alert>
+            : <Container>
+              <ListGroup as='list-group'>
+                <ListGroup.Item>City: {this.state.cityData.display_name}</ListGroup.Item>
+                <ListGroup.Item>Latitude: {this.state.cityData.lat}</ListGroup.Item>
+                <ListGroup.Item>Longitude: {this.state.cityData.lon}</ListGroup.Item>
+              </ListGroup>
+              <Image src={this.state.cityMap}></Image>
+            </Container>
         }
 
       </>
