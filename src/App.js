@@ -51,14 +51,12 @@ class App extends React.Component {
     return (
       <>
         <h1>API Calls</h1>
-
         <Form onSubmit={this.getCityData}>
-          <Form.Group>
-          <label htmlFor="">Pick a City!
-            <input type="text" onInput={this.handleInput} />
-            <Button type="submit">Explore!</Button>
-          </label>
-          </Form.Group>
+        <Form.Group>
+          <Form.Label as='form-label'>City Name:</Form.Label>
+          <Form.Control type='text' placeholder='City Name' onInput={this.handleInput}></Form.Control>
+          <Button type='submit'>Explore!</Button>
+        </Form.Group>
         </Form>
 
         {
