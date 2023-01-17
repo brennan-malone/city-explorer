@@ -1,7 +1,7 @@
 # Project Name
 
 **Author**: Brennan Malone
-**Version**: 1.0.1
+**Version**: 1.0.2
 
 ## Overview
 
@@ -16,20 +16,55 @@ Use React, Axios, and Bootstrap packages. The LocationIQ API key will need to be
 LocationIQ, React, HTML, CSS, JavaScript
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+01-17-2023 3:45am - Application now has a function API call, map rendering and spacing via bootstrap.
 
 ## Credit and Collaborations
 
 ------------------------------------------------------------------------------------------------------------------
 
-Name of feature: ________________________________
+Name of feature: Setup React Repository and API keys.
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30min
 
-Start time: _____
+Start time: 12:00am
 
-Finish time: _____
+Finish time: 12:30am
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30mins
+
+------------------------------------------------------------------------------------------------------------------
+
+Name of feature: Locations seeing lat and lon of locations
+
+Estimate of time needed to complete: 45min
+
+Start time: 12:30am
+
+Finish time: 1:30am
+
+Actual time needed to complete: 60mins
+
+------------------------------------------------------------------------------------------------------------------
+
+Name of feature: Map render
+
+Estimate of time needed to complete: 45min
+
+Start time: 1:30am
+
+Finish time: 2:30am
+
+Actual time needed to complete: 60mins
+
+------------------------------------------------------------------------------------------------------------------
+
+Name of feature: Error handling.
+
+Estimate of time needed to complete: 30min
+
+Start time: 2:30am
+
+Finish time: 2:45am
+
+Actual time needed to complete: 15mins
