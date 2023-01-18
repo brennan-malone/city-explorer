@@ -17,6 +17,7 @@ class App extends React.Component {
       error: false,
       errorMessage: '',
       cityMap: '',
+      weatherData: {},
     }
   }
   handleInput = (e) => {
@@ -46,17 +47,31 @@ class App extends React.Component {
         errorMessage: `${error.message}`
       })
     }
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}&lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`
+
+      let weatherData = await axios.get(url);
+
+      this.setState({
+        weatherData: weatherData.data
+      })
+    } catch (error) {
+      this.setState({
+        error: true,
+        errorMessage: `${error.message}`
+      })
+    }
   }
   render() {
     return (
       <>
         <h1>API Calls</h1>
         <Form onSubmit={this.getCityData}>
-        <Form.Group>
-          <Form.Label as='form-label'>City Name:</Form.Label>
-          <Form.Control type='text' placeholder='City Name' onInput={this.handleInput}></Form.Control>
-          <Button type='submit'>Explore!</Button>
-        </Form.Group>
+          <Form.Group>
+            <Form.Label as='form-label'>City Name:</Form.Label>
+            <Form.Control type='text' placeholder='City Name' onInput={this.handleInput}></Form.Control>
+            <Button type='submit'>Explore!</Button>
+          </Form.Group>
         </Form>
 
         {
@@ -69,9 +84,12 @@ class App extends React.Component {
                 <ListGroup.Item>Longitude: {this.state.cityData.lon}</ListGroup.Item>
               </ListGroup>
               <Image src={this.state.cityMap}></Image>
-            </Container>
-        }
 
+            </Container>
+        }{this.state.weatherData.map((element) => {
+          return <div><p>{element.description}</p></div>
+        }) 
+        }
       </>
     );
   }

@@ -1,7 +1,7 @@
 # Project Name
 
 **Author**: Brennan Malone
-**Version**: 1.0.2
+**Version**: 1.0.3
 
 ## Overview
 
@@ -16,6 +16,8 @@ Use React, Axios, and Bootstrap packages. The LocationIQ API key will need to be
 LocationIQ, React, HTML, CSS, JavaScript
 
 ## Change Log
+
+01-17-2023 3:45am - Application now has a function API call, map rendering and spacing via bootstrap.
 
 01-17-2023 3:45am - Application now has a function API call, map rendering and spacing via bootstrap.
 
