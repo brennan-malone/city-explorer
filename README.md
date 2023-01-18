@@ -1,7 +1,7 @@
 # Project Name
 
 **Author**: Brennan Malone
-**Version**: 1.0.3
+**Version**: 1.0.4
 
 ## Overview
 
@@ -21,7 +21,15 @@ LocationIQ, React, HTML, CSS, JavaScript
 
 01-17-2023 3:45am - Application now has a function API call, map rendering and spacing via bootstrap.
 
+01-18-2023 6:00pm - Completed lab 7 and rendered weather day to page
+
 ## Credit and Collaborations
+
+## WRCC
+
+### Day two
+
+![wrcc image](./assets/Screenshot%20from%202023-01-17%2018-10-29.png)
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -59,14 +67,14 @@ Finish time: 2:30am
 
 Actual time needed to complete: 60mins
 
-------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------;
 
-Name of feature: Error handling.
+Name of feature: render weather with Weather.js
 
-Estimate of time needed to complete: 30min
+Estimate of time needed to complete: 1hrs
 
-Start time: 2:30am
+Start time: 5:00pm
 
-Finish time: 2:45am
+Finish time: 6:00pm
 
-Actual time needed to complete: 15mins
+Actual time needed to complete: 1hrs

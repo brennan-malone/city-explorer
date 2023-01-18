@@ -7,6 +7,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Image from 'react-bootstrap/Image';
 import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
+import Weather from './components/Weather';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class App extends React.Component {
       error: false,
       errorMessage: '',
       cityMap: '',
-      weatherData: {},
+      weatherData: [],
     }
   }
   handleInput = (e) => {
@@ -35,6 +36,11 @@ class App extends React.Component {
 
       let cityMap = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${cityDataFromAxios.data[0].lat},${cityDataFromAxios.data[0].lon}&zoom=10`;
 
+      let lat = cityDataFromAxios.data[0].lat;
+      let lon = cityDataFromAxios.data[0].lon;
+
+      this.handleGetWeather(lat, lon);
+
       this.setState({
         cityData: cityDataFromAxios.data[0],
         cityMap: cityMap,
@@ -47,13 +53,17 @@ class App extends React.Component {
         errorMessage: `${error.message}`
       })
     }
-    try {
-      let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}&lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`
 
-      let weatherData = await axios.get(url);
+  }
+
+  handleGetWeather = async (lat, lon) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}&lat=${lat}&lon=${lon}`
+
+      let weatherDataFromAxios = await axios.get(url);
 
       this.setState({
-        weatherData: weatherData.data
+        weatherData: weatherDataFromAxios.data
       })
     } catch (error) {
       this.setState({
@@ -62,6 +72,7 @@ class App extends React.Component {
       })
     }
   }
+
   render() {
     return (
       <>
@@ -84,12 +95,11 @@ class App extends React.Component {
                 <ListGroup.Item>Longitude: {this.state.cityData.lon}</ListGroup.Item>
               </ListGroup>
               <Image src={this.state.cityMap}></Image>
-
             </Container>
-        }{this.state.weatherData.map((element) => {
-          return <div><p>{element.description}</p></div>
-        }) 
         }
+        <Weather 
+          weatherData={this.state.weatherData}
+        />
       </>
     );
   }
