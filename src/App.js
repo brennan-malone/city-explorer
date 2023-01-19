@@ -8,6 +8,7 @@ import Image from 'react-bootstrap/Image';
 import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import Weather from './components/Weather';
+import Movies from './components/Movies'
 
 class App extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class App extends React.Component {
       errorMessage: '',
       cityMap: '',
       weatherData: [],
+      movieResults: [],
     }
   }
   handleInput = (e) => {
@@ -40,6 +42,7 @@ class App extends React.Component {
       let lon = cityDataFromAxios.data[0].lon;
 
       this.handleGetWeather(lat, lon);
+      this.handleGetMovies();
 
       this.setState({
         cityData: cityDataFromAxios.data[0],
@@ -72,7 +75,22 @@ class App extends React.Component {
       })
     }
   }
+  handleGetMovies = async () => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${this.state.city}`
 
+      let movieDataFromAxios = await axios.get(url);
+
+      this.setState({
+        movieResults: movieDataFromAxios.data
+      })
+    } catch (error) {
+      this.setState({
+        error: true,
+        errorMessage: `${error.message}`
+      })
+    }
+  }
   render() {
     return (
       <>
@@ -100,8 +118,11 @@ class App extends React.Component {
         <Weather 
           weatherData={this.state.weatherData}
         />
+        <Movies
+        movieResults={this.state.movieResults}
+        />
       </>
-    );
+    )
   }
 }
 export default App;

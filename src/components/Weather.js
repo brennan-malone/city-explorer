@@ -10,7 +10,7 @@ class Weather extends React.Component {
         {this.props.weatherData.map((day, index) => {
           return <ListGroup.Item key={index}>{day.date}, {day.description}</ListGroup.Item>
         })
-        };
+        }
       </>
     )
   }
