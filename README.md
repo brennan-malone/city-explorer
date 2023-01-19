@@ -1,7 +1,7 @@
 # Project Name
 
 **Author**: Brennan Malone
-**Version**: 1.0.4
+**Version**: 1.0.5
 
 ## Overview
 
@@ -23,13 +23,19 @@ LocationIQ, React, HTML, CSS, JavaScript
 
 01-18-2023 6:00pm - Completed lab 7 and rendered weather day to page
 
+01-18-2023 7:35pm - Added movie API functionality
+
 ## Credit and Collaborations
 
 ## WRCC
 
 ### Day two
 
-![wrcc image](./assets/Screenshot%20from%202023-01-17%2018-10-29.png)
+![wrcc image](./assets/ScreenshotD2.png)
+
+### Day three
+
+![wrcc image](./assets/ScreenshotD3.png)
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -76,5 +82,17 @@ Estimate of time needed to complete: 1hrs
 Start time: 5:00pm
 
 Finish time: 6:00pm
+
+Actual time needed to complete: 1hrs
+
+------------------------------------------------------------------------------------------------------------;
+
+Name of feature: create API callout to movie API
+
+Estimate of time needed to complete: 1hrs
+
+Start time: 6:00pm
+
+Finish time: 7:30pm
 
 Actual time needed to complete: 1hrs
