@@ -11,7 +11,9 @@ class Submovie extends React.Component {
             <p>{this.props.releaseData}</p>
           </Carousel.Caption>
           <img
-            alt="the movie poster" style={{ height: "400px" }} src={`https://image.tmdb.org/t/p/original${this.props.poster}`}>
+            alt="the movie poster" 
+            src={`https://image.tmdb.org/t/p/original${this.props.poster}`}
+            >
           </img>
       </>
     )

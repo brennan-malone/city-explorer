@@ -19,6 +19,8 @@ form *{
 div {
   background-color: #eee;
 }
-html{
-  background-color: #444;
+.container {
+  border-color: #222;
+  border-width: 2px;
+  border-radius: 4px;
 }

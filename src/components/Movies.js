@@ -8,20 +8,20 @@ class Movies extends React.Component {
 
     return (
       <>
-      <Carousel slide={false}>
-      {this.props.movieResults.map((movie, index) => {
-        return (
-          <Carousel.Item>
-       <Submovie 
-       title={movie.title}
-       releaseData={movie.release}
-       poster={movie.poster}
-       key={index}
-       />
-       </Carousel.Item>
-        )
-      })}
-      </Carousel>
+        <Carousel slide={false}>
+          {this.props.movieResults.map((movie, index) => {
+            return (
+              <Carousel.Item>
+                <Submovie
+                  title={movie.title}
+                  releaseData={movie.release}
+                  poster={movie.poster}
+                  key={index}
+                />
+              </Carousel.Item>
+            )
+          })}
+        </Carousel>
       </>
     )
   }

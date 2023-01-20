@@ -37,6 +37,10 @@ LocationIQ, React, HTML, CSS, JavaScript
 
 ![wrcc image](./assets/ScreenshotD3.png)
 
+## Day four 
+
+![wrcc image](./assets/ScreenshotD4.png)
+
 ------------------------------------------------------------------------------------------------------------------
 
 Name of feature: Setup React Repository and API keys.
@@ -96,3 +100,15 @@ Start time: 6:00pm
 Finish time: 7:30pm
 
 Actual time needed to complete: 1hrs
+
+------------------------------------------------------------------------------------------------------------;
+
+Name of feature: created components for each process
+
+Estimate of time needed to complete: 30mins
+
+Start time: 6:00pm
+
+Finish time: 7:30pm
+
+Actual time needed to complete: 1:30 hr
