@@ -81,8 +81,10 @@ class App extends React.Component {
 
       let movieDataFromAxios = await axios.get(url);
 
+
       this.setState({
         movieResults: movieDataFromAxios.data
+        
       })
     } catch (error) {
       this.setState({
@@ -125,4 +127,6 @@ class App extends React.Component {
     )
   }
 }
+
+
 export default App;
